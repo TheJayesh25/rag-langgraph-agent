@@ -14,7 +14,6 @@ from langchain_core.tools import tool
 
 load_dotenv()
 
-# llm = GitHubGPT4oChatModel(temperature=0.1) # I want to minimize hallucination - temperature = 0 makes the model output more deterministic 
 llm = ChatOpenAI(
     model='gpt-4o',
     temperature=0.1,
@@ -25,17 +24,11 @@ embeddings = OpenAIEmbeddings(
     model="text-embedding-3-small",
 )
 
-# embeddings = OpenAIEmbeddings(
-#     model="text-embedding-3-small",
-#     openai_api_base="https://models.inference.ai.azure.com",
-#     openai_api_key=os.environ["GITHUB_TOKEN_2"]
-# )
-
 
 pdf_path = r"C:\Users\jps25\OneDrive\Desktop\Documents\Langraph\AI Agents\RAG Agent\Stock_Market_Performance_2024.pdf"
 
 # print(os.path())
-# # Safety measure I have put for debugging purposes :)
+
 if not os.path.exists(pdf_path):
     raise FileNotFoundError(f"PDF file not found: {pdf_path}")
 else:
