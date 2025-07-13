@@ -25,7 +25,7 @@ embeddings = OpenAIEmbeddings(
 )
 
 
-pdf_path = r"C:\Users\jps25\OneDrive\Desktop\Documents\Langraph\AI Agents\RAG Agent\Stock_Market_Performance_2024.pdf"
+pdf_path = r".\Stock_Market_Performance_2024.pdf"
 
 # print(os.path())
 
@@ -53,7 +53,7 @@ text_splitter = RecursiveCharacterTextSplitter(
 
 pages_split = text_splitter.split_documents(pages) # We now apply this to our pages
 
-persist_directory = r"C:\Users\jps25\OneDrive\Desktop\Documents\Langraph\AI Agents\RAG Agent"
+persist_directory = r".\RAG Agent"
 collection_name = "stock_market"
 
 # # If our collection does not exist in the directory, we create using the os command
